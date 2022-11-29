@@ -7,8 +7,8 @@ use a phony target: to
 all: setup
 
 setup:
-	python3 -m venv ~/.venv/environments
+	python3 -m venv ~/.venv/always_free
         # https://docs.python.org/3/library/venv.html#creating-virtual-environments
-	# After running `Make setup`, add an alias to your .zshrc file, i.e. `cd ~/Documents/projects/always_free && source ~/.venv/environments/bin/activate`
+	# After running `Make setup`, add an alias to your .zshrc file, i.e. `cd ~/Documents/projects/always_free && source ~/.venv/always_free/bin/activate`
 install:
 	pip install -r requirements.txt
