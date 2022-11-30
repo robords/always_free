@@ -8,3 +8,4 @@ awscli==1.*
 matplotlib==3.5.*
 seaborn==0.12.*
 pylint==2.15.*
+python-git
