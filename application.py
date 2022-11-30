@@ -10,19 +10,18 @@ def index():
     try:
         endpoint = os.environ['API_ENDPOINT']
     except KeyError:
-        endpoint = 'Local'
+        endpoint = 'Local!'
     return hello(environment=endpoint)
-=
-app = Flask(__name__)
-@app.route('/update_server', methods=['POST'])
-    def webhook():
-        if request.method == 'POST':
-            repo = git.Repo('path/to/git_repo')
-            origin = repo.remotes.origin
-origin.pull()
-return 'Updated PythonAnywhere successfully', 200
-        else:
-            return 'Wrong event type', 400
+
+@application.route('/update_server', methods=['POST'])
+def webhook():
+    if request.method == 'POST':
+        repo = git.Repo('path/to/git_repo')
+        origin = repo.remotes.origin
+        origin.pull()
+        return 'Updated PythonAnywhere successfully', 200
+    else:
+        return 'Wrong event type', 400
 
 if __name__ == '__main__':
     application.run(host='127.0.0.1', port=8080, debug=True)
