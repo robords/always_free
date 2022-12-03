@@ -10,12 +10,18 @@ def index():
     try:
         endpoint = os.environ['API_ENDPOINT']
     except KeyError:
-        endpoint = 'Local?!?! hopefully this works someday'
+        try:
+            endpoint = os.environ['PYTHONANYWHERE_SITE']
+        except KeyError:
+            endpoint = 'Local'
     return hello(environment=endpoint)
 
 @application.route('/update_server', methods=['POST'])
 def webhook():
+    # based on: https://medium.com/@aadibajpai/deploying-to-pythonanywhere-via-github-6f967956e664
     if request.method == 'POST':
+        # finding the right way to specify the local git repo is a pain
+        # https://stackoverflow.com/questions/22081209/find-the-root-of-the-git-repository-where-the-file-lives
         repo = git.Repo('~/always_free') 
         origin = repo.remotes.origin
         origin.pull()
