@@ -10,7 +10,7 @@ def index():
     try:
         endpoint = os.environ['API_ENDPOINT']
     except KeyError:
-        endpoint = 'Local?!?!'
+        endpoint = 'Local'
     return hello(environment=endpoint)
 
 @application.route('/update_server', methods=['POST'])
