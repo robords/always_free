@@ -10,13 +10,13 @@ def index():
     try:
         endpoint = os.environ['API_ENDPOINT']
     except KeyError:
-        endpoint = 'Local'
+        endpoint = 'Local?!?! hmmm'
     return hello(environment=endpoint)
 
 @application.route('/update_server', methods=['POST'])
 def webhook():
     if request.method == 'POST':
-        repo = git.Repo('.', search_parent_directories=True) 
+        repo = git.Repo('~/always_free') 
         origin = repo.remotes.origin
         origin.pull()
         return 'Updated PythonAnywhere successfully', 200
