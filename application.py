@@ -8,9 +8,11 @@ application = Flask(__name__)
 @application.route('/', methods=['GET', 'POST'])
 def index():
     try:
+        # this will work if it's on AWS EB
         endpoint = os.environ['API_ENDPOINT']
     except KeyError:
         try:
+            # this will work if we're on pythonanywhere
             endpoint = os.environ['PYTHONANYWHERE_SITE']
         except KeyError:
             endpoint = 'Local'

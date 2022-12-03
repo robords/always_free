@@ -9,3 +9,9 @@ matplotlib==3.5.*
 seaborn==0.12.*
 pylint==2.15.*
 GitPython
+accelerate==0.15.*
+diffusers==0.9.*
+scipy==1.9.*
+torch==1.13.*
+transformers==4.25.*
+
