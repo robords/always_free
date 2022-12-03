@@ -16,7 +16,7 @@ def index():
 @application.route('/update_server', methods=['POST'])
 def webhook():
     if request.method == 'POST':
-        repo = git.Repo('robords/always_free')
+        repo = git.Repo()
         origin = repo.remotes.origin
         origin.pull()
         return 'Updated PythonAnywhere successfully', 200
