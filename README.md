@@ -4,7 +4,7 @@
 * How can we automate it so updates are pushed automatically from my repository?
 
 
-|                          | **Python Anywhere** | **Oracle VM   **                                                                                                                                                                     | 
+|                          | **Python Anywhere** | **Oracle VM**                                                                                                                                                                     | 
 |--------------------------|-----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Memory (GB)              | 3               | 1                                                                                                                                                                                | 
 | CPU                      | 100 Seconds     | 1 OCPU                                                                                                                                                                           | 
@@ -12,10 +12,45 @@
 | Disk Space (GB)          | 0.512           | [50](https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm#:~:text=Free%20compute%20instances-,Block%20Volume,-All%20tenancies%20receive) | 
 
 ## Python Anywhere
-There is a free tier
+**What's Free?**
+There is a free tier, with very limited resources
+
+**How do I automatically update from Github?**
+[Github Webhooks](https://medium.com/@aadibajpai/deploying-to-pythonanywhere-via-github-6f967956e664) allows me to push every time there is a change made to Python Anywhere
+
+**Steps:**
+1. Install Git
+2. Clone your repo to Python Anywhere (this adds your "update_server" path)
+3. Create the webhook
 
 ## Oracle Cloud
+
+**What's Free?**
 There's an ["always free"](https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm) tier which includes a micro VM for compute.
+
+**How do I automatically update from Github?**
+[Github Webhooks again](https://clement.notin.org/blog/2021/04/13/auto-deploy-python-flask-web-app-on-github-push/)
+
+**Steps:**
+Roughly following [this tutorial](https://docs.oracle.com/en-us/iaas/developer-tutorials/tutorials/flask-on-ubuntu/01oci-ubuntu-flask-summary.htm#).
+1. Create the free-tier VM (Oracle Console)
+2. Add ingress rule to VM subnet (Oracle Console)
+3. Install Git, `sudo yum install git`
+4. Create SSH key for github [walkthrough](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+5. Add SSH key to github [walkthrough](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
+6. Clone repo
+7. Create and Start venv (`cd ~/always_free && make setup`)
+8. Install requirements.txt, `make install`
+9. 
+
+
+## Google Cloud
+**What's Free?**
+There's a free tier, specifically I'm interested in [App Engine](https://cloud.google.com/free/docs/free-cloud-features#app-engine)
+
+How do I keep from exceeding the limit?
+WIP
+
 
 ## Features
 ### Stable Diffusion
