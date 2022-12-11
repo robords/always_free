@@ -6,12 +6,12 @@ db-dtypes==1.0.*
 Flask==2.*
 awscli==1.*
 matplotlib==3.*
-seaborn==0.12.*
-pylint==2.15.*
+seaborn==0.*
+pylint==2.*
 GitPython
-accelerate==0.15.*
-diffusers==0.9.*
-scipy==1.9.*
-torch==1.13.*
-transformers==4.25.*
+accelerate==0.*
+diffusers==0.*
+scipy==1.*
+torch==1.*
+transformers==4.*
 

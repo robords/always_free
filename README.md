@@ -40,7 +40,8 @@ Roughly following [this tutorial](https://docs.oracle.com/en-us/iaas/developer-t
 5. Add SSH key to github [walkthrough](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 6. Clone repo
 7. Create and Start venv (`cd ~/always_free && make setup`)
-8. Install requirements.txt, `make install`
+8. Make it easy to start the venv - add an alias to ~/.bashrc or ~/.zshrc: `alias af="cd ~/always_free && source ~/.venv/always_free/bin/activate"`
+8. Install requirements.txt: in the venv, `make install`
 9. 
 
 
