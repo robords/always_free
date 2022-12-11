@@ -42,7 +42,24 @@ Roughly following [this tutorial](https://docs.oracle.com/en-us/iaas/developer-t
 7. Create and Start venv (`cd ~/always_free && make setup`)
 8. Make it easy to start the venv - add an alias to ~/.bashrc or ~/.zshrc: `alias af="cd ~/always_free && source ~/.venv/always_free/bin/activate"`
 8. Install requirements.txt: in the venv, `make install`
-9. 
+9. Update the firewall `sudo iptables -I INPUT -m state --state NEW -p tcp --dport 5000 -j ACCEPT`
+9. Run it
+### Setup nginx on Oracle VM 
+To put flask behind nginx, make sure to install python3-devel first: `sudo yum install python3-devel`     
+
+Follow the [tutorial here](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-centos-7).
+1. `sudo yum install epel-release`
+2. `sudo yum install nginx` 
+3. Start it: `sudo systemctl start nginx`
+4. Get it's status: `sudo systemctl status nginx`
+5. Open the firewall: 
+```linux
+sudo firewall-cmd --permanent --zone=public --add-service=http
+sudo firewall-cmd --permanent --zone=public --add-service=https
+sudo firewall-cmd --reload
+```
+6. Add ports 80 and 443 to the Security List under virtual cloud networks
+7. Verify you see the defaul nginx page at the server public IP 
 
 
 ## Google Cloud
