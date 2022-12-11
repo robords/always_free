@@ -14,7 +14,7 @@ def index():
         try:
             # this will work if we're on pythonanywhere
             if os.environ['PYTHONANYWHERE_SITE'] == 'www.pythonanywhere.com':
-            endpoint = 'Hosted on Python Anywhere'
+                endpoint = 'Hosted on Python Anywhere'
         except KeyError:
             endpoint = 'Local'
     return render_template('index.html', environment=endpoint)
