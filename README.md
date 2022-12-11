@@ -1,8 +1,24 @@
 # Always Free
 
-What can a Python hobbiest build without spending a dime?
+* What can I build without spending any money?
+* How can we automate it so updates are pushed automatically from my repository?
 
-## Stable Diffusion
+
+|                          | **Python Anywhere** | **Oracle VM   **                                                                                                                                                                     | 
+|--------------------------|-----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Memory (GB)              | 3               | 1                                                                                                                                                                                | 
+| CPU                      | 100 Seconds     | 1 OCPU                                                                                                                                                                           | 
+| Network bandwidth (Gbps) | "Low"           | 0.48                                                                                                                                                                             | 
+| Disk Space (GB)          | 0.512           | [50](https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm#:~:text=Free%20compute%20instances-,Block%20Volume,-All%20tenancies%20receive) | 
+
+## Python Anywhere
+There is a free tier
+
+## Oracle Cloud
+There's an ["always free"](https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm) tier which includes a micro VM for compute.
+
+## Features
+### Stable Diffusion
 1. Make sure you install PyTorch first
 2. Set up your account on Hugging Face https://huggingface.co/welcome
 3. Accept the license aggreement to run it locally: https://huggingface.co/runwayml/stable-diffusion-v1-5
