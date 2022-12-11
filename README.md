@@ -17,6 +17,7 @@ pipe = StableDiffusionPipeline.from_pretrained("./stable-diffusion-v1-5",
     revision="fp16", 
     torch_dtype=torch.float16)
 
+# Try: disable the following line if you run on CPU
 # On mac "mps" (otherwise, "cuda", if there is a Nvidia GPU)
 pipe = pipe.to("mps")
 

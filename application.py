@@ -16,7 +16,7 @@ def index():
             endpoint = os.environ['PYTHONANYWHERE_SITE']
         except KeyError:
             endpoint = 'Local'
-    return hello(environment=endpoint)
+    return render_template('index.html', environment=endpoint)
 
 @application.route('/update_server', methods=['POST'])
 def webhook():
